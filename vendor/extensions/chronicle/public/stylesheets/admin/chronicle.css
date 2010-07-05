@@ -1,0 +1,171 @@
+#timeline {
+  float: right;
+  display:inline;
+  width: 500px;
+  text-align: right;
+  padding-top: 24px;
+  margin-right: 6px;
+}
+#timeline ol {
+  margin: 0;
+  padding: 0;
+}
+#timeline li {
+  float: right;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  width: 26px;
+  height: 12px;
+  line-height: 12px;
+  background: url(/images/admin/line.png) repeat-x 0 4px;
+}
+#timeline li.beginning {
+  width: 40px;
+  background-image: url(/images/admin/line-beginning.png);
+}
+#timeline li#version-1 {
+  background-image: none;
+}
+#timeline li .marker {
+  position: absolute;
+  right: -8px;
+  top: -22px;
+}
+#timeline li #this-marker.marker {
+  top: 12px;
+  right: 0;
+  cursor: auto;
+}
+#timeline li img {
+  padding: 0;
+  margin: 0;
+  padding-left: 1px;
+  padding-right: 1px;
+  background-color: #fff;
+  vertical-align: top;
+}
+.version-info .version-number,
+.version-info .version-status,
+.version-info .diff-link {
+  float: left;
+  clear: left;
+}
+.version-info .version-updated-at,
+.version-info .version-author {
+  float: right;
+  clear: right;
+}
+td.status span.status {
+  white-space: nowrap;
+}
+td.status span.status.draft-status {
+  color: #c00;
+}
+td.status span.status.reviewed-status {
+  color: #9eb3bf;
+}
+
+/*** Diff view ***/
+#content #diff table.fieldset td.field {
+  text-align: left;
+  padding-top: 10px;
+  width: 98%;
+}
+#content #diff #pages .page {
+  border-width: 1px;
+  padding: 15px 20px;
+}
+#diff span.to,
+#content #diff #pages .page.added,
+#version-diff-popup #diff #pages .page.added {
+  background-color: #DDFFDD;
+}
+#diff span.from,
+#content #diff #pages .page.deleted,
+#version-diff-popup #diff #pages .page.deleted {
+  background-color: #FFDDDD;
+}
+#content #diff h3 {
+  margin-bottom: 6px;
+}
+#content #diff h4.name,
+#version-diff-popup #diff h4.name {
+  font-weight: bold;
+  margin: 0 1em 1em 0;
+  float: left;
+}
+#content #diff p.filter,
+#version-diff-popup #diff p.filter {
+  font-size: 90%;
+  margin-top: .1em;
+}
+#content #diff pre,
+#version-diff-popup #diff pre {
+  margin: 1em 0 0;
+  clear: left;
+  overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  /* width: 99%; */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+#content #diff ins,
+#version-diff-popup #diff ins {
+  background-color: #99EE99;
+  text-decoration: none;
+}
+#content #diff del,
+#version-diff-popup #diff del {
+  background-color: #EE9999;
+  text-decoration: line-through;
+}
+/*** Popup diff ***/
+#version-diff {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 500px;
+}
+#version-diff-popup p {
+  margin-top: 0;
+}
+#version-diff-popup .form-area h3 {
+  font-size:100%;
+  margin-bottom:.25em;
+}
+#version-diff-popup #diff{
+  font-size:100%;
+}
+#version-diff-popup #diff #pages .page {
+  padding: 10px 15px;
+  border: 1px solid #DFD3C3;
+}
+#version-diff-popup .form-area .row p {
+  float:left;
+  margin: 1em 2em 1em 0;
+}
+#version-diff-popup label {
+  font-weight: bold;
+}
+#version-diff-popup table.fieldset {
+  border-bottom:1px solid #DFD3C3;
+  margin-bottom:1em;
+  width:100%;
+}
+#version-diff-popup table.fieldset th.label {
+  padding-right:8px;
+  text-align:left;
+  vertical-align:top;
+  white-space:nowrap;
+  width:1%;
+}
+#version-diff-popup table.fieldset td,
+#version-diff-popup table.fieldset th {
+  background-color:white;
+  border-top:1px solid #DFD3C3;
+  color:inherit;
+  padding:4px;
+}

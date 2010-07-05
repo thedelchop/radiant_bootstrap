@@ -8,13 +8,17 @@ command.  This will run all the migrations nessecary to use Radiant and the comm
 
 This project takes advantage of the following extensions:
 
-+ Styles 'n Scripts - http://github.com/radiant/radiant-sns-extension
-+ Privileges - http://github.com/thedelchop/privileges
-+ Nested Layouts - http://github.com/moklett/radiant-nested-layouts-extension
-+ Paperclipped - http://github.com/kbingman/paperclipped
-+ Import/Export - http://github.com/radiant/radiant-import-export-extension
-+ Forms Extension - http://github.com/squaretalent/radiant-forms-extension
-+ Forms Mailer Extension - http://github.com/squaretalent/radiant-forms_mail_extensions
++ [Styles 'n Scripts](http://github.com/radiant/radiant-sns-extension) - A DRY'er way to manage CSS and JS inside Raidant.
++ [Privileges](http://github.com/thedelchop/privileges) - Restricts regular radiant users to only updating content.  Perfect for designers who want to allow their customers to update some content, but are afraid of letting them add or remove pages or play with the design.
++ [Nested Layouts](http://github.com/moklett/radiant-nested-layouts-extension) - A DRY'er way of managing layouts in Radiant, allowing layouts to cascade, much like stylesheets.
++ [Paperclipped](http://github.com/kbingman/paperclipped) - Utiltiy to allow for image attachment.
++ [Import/Export](http://github.com/radiant/radiant-import-export-extension) - A better way to import/export your SQL dbs, allowing them to be checked into source control or migrated to new servers.
++ [Forms](http://github.com/squaretalent/radiant-forms-extension) - Extension to more effciently manage forms within Radiant.
++ [Forms Mailer](http://github.com/squaretalent/radiant-forms_mail_extensions) - Extension built on top of radiant-forms-extension to allow for forms to be used as email inquiries.
++ [Wym Editor Filter](http://github.com/jomz/radiant-wym-editor-filter-extension) - Page editor filter that uses the WYSIWYM style, allowing easier update of content while preventing design changes.
++ [Copy Move](http://github.com/pilu/radiant-copy-move) - Nifty extension that allow you to copy and moves pages around in the tree structue instead of creating duplicates.
++ [Reorder](http://github.com/radiant/radiant-reorder-extension) - Provides an interface within Radiant CMS for the reording of the pages structure for a Radiant site.
++ [Chronicle](http://github.com/jgarber/radiant-chronicle-extension) - Provides page versioning for pages within the Radiant interface for easier content management.
 
 #Usage
 
@@ -27,15 +31,19 @@ extensions seperately.
 Then, it is nessecary to run
   rake install
 which will run the following rake commands:
-  rake db:bootstrap
+      rake db:bootstrap
 
-  rake db:migrate:extensions
+      rake db:migrate:extensions
 
-  rake radiant:extensions:forms:update
-  rake radiant:extensions:sns:update
-  rake radiant:extensions:privileges:update
-  rake radiant:extensions:paperclipped:update
+      rake radiant:extensions:forms:update
+      rake radiant:extensions:sns:update
+      rake radiant:extensions:privileges:update
+      rake radiant:extensions:paperclipped:update
+      rake radiant:extensions:reorder:update
 
-  rake db:export
+      radiant:extensions:copy_move:install
+      radiant:extensions:wym_editor_filter:install
+
+      rake db:export
 
 Then its off to developing your own website using Radiant CMS!

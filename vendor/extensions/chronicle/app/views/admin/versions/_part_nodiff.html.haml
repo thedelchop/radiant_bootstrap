@@ -1,0 +1,6 @@
+%h4.name= part["name"]
+- unless part["filter_id"].blank?
+  %p.filter
+    Filter:
+    = part["filter_id"]
+%pre= h(part["content"])

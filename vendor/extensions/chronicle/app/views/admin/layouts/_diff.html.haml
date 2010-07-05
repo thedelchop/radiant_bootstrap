@@ -1,0 +1,31 @@
+#diff.form-area
+  .row
+    %p
+      %label Name:
+      %span= field_diff(version, :name)
+  %div{:style => "clear:both"}
+  .row
+    %p
+      %label Content type:
+      %span
+        - if version.previous
+          = field_diff(version, :content_type)
+        - else
+          = h(version.instance.content_type)
+  %div{:style => "clear:both"}
+  %h3 Content:
+  #pages
+    .page{:style => "padding-top:0"}
+      - if version.previous
+        %pre= diff(h(version.previous.instance.content), h(version.instance.content))
+      - else
+        %pre= h(version.instance.content)
+  .row
+    %p
+      %label Status:
+      %span= status_diff(version)
+  %div{:style => "clear:both"}
+  %p= updated_stamp(version.instance)
+  - form_tag(edit_admin_layout_path(:id => version.versionable_id), :method => :get) do
+    = hidden_field_tag(:version, version.number)
+    = submit_tag("Revert to Version #{version.number}", :name => nil)

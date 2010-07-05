@@ -1,0 +1,12 @@
+.version-info
+  %span.version-number
+    = "Version " + @version.number.to_s
+  %span.version-updated-at
+    %abbr{:title => @version.instance.updated_at.strftime("%B %d, %Y %I:%M %p")}
+      = time_ago_in_words(@version.instance.updated_at) + " ago"
+  %span.version-status
+    = @version.instance.status.name
+  %span.version-author
+    = @version.saved_by.name
+  %span.diff-link
+    = link_to_function 'Show Diff', "load_version_diff('#{diff_admin_version_path(@version)}', this);"

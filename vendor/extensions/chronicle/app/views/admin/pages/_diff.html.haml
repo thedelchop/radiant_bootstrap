@@ -1,0 +1,40 @@
+#diff.form-area
+  %h3 Metadata:
+  %table{:class=>"fieldset"}
+    %tbody
+      %tr
+        %th{:class=>"label"} Page Title:
+        %td{:class=>"field"}= field_diff(version, :title)
+      %tr
+        %th{:class=>"label"} Slug:
+        %td{:class=>"field"}= field_diff(version, :slug)
+      %tr
+        %th{:class=>"label"} Breadcrumb:
+        %td{:class=>"field"}= field_diff(version, :breadcrumb)
+      - if version.diff[:description] || !version.instance.send(:description).blank?
+        %tr
+          %th{:class=>"label"} Description:
+          %td{:class=>"field"}= field_diff(version, :description)
+      - if version.diff[:keywords] || !version.instance.send(:keywords).blank?
+        %tr
+          %th{:class=>"label"} Keywords:
+          %td{:class=>"field"}= field_diff(version, :keywords)
+  %h3 Page Parts:
+  #pages
+    - version.diff[:parts].each do |part|
+      = part_diff(part)
+  .row
+    %p
+      %label Layout:
+      %span= layout_diff(version)
+    %p
+      %label Page Type:
+      %span= field_diff(version, :class_name, "<normal>")
+    %p
+      %label Status:
+      %span= status_diff(version)
+  %span.clear
+  = updated_stamp(version.instance)
+  - form_tag(edit_admin_page_path(:id => version.versionable_id), :method => :get) do
+    = hidden_field_tag(:version, version.number)
+    = submit_tag("Revert to Version #{version.number}", :name => nil)
