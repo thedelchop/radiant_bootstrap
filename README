@@ -1,0 +1,27 @@
+--------------------------------------------------------------------------------
+Radiant Bootstrap
+--------------------------------------------------------------------------------
+
+This is meant to be a simple bootstrap of the basic radiant setup that I am using.
+It includes several of the plugins that I use on a regular basis.
+
+Style and Scripts - http://github.com/radiant/radiant-sns-extension
+Privileges - http://github.com/thedelchop/privileges
+Nested Layouts - http://github.com/moklett/radiant-nested-layouts-extension
+Paperclipped - http://github.com/kbingman/paperclipped
+Import/Export - http://github.com/radiant/radiant-import-export-extension
+Forms Extension - http://github.com/squaretalent/radiant-forms-extension
+Forms Mailer Extension - http://github.com/squaretalent/radiant-forms_mail-extension 
+
+The default rake action will run the following:
+
+rake production db:bootstrap
+
+rake production db:migrate:extensions
+
+rake radiant:extensions:forms:update
+rake radiant:extensions:sns:update
+rake radiant:extensions:privileges:update
+rake radiant:extensions:paperclipped:update
+
+rake production db:export
