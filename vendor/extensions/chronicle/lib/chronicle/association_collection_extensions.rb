@@ -13,7 +13,7 @@ module Chronicle
     def find_with_draft_versioning(*args)
       current = args[1].delete(:current) if args[1]
       result = find_without_draft_versioning(*args)
-      if result && current
+      if result && current && !result.kind_of?(Page)
         result.map {|versionable| versionable.current }
       else
         result
