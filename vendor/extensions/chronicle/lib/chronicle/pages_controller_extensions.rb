@@ -2,7 +2,6 @@ module Chronicle::PagesControllerExtensions
   def self.included(base)
     base.class_eval {
       include InstanceMethods
-      alias_method_chain :announce_saved, :show_page
       helper 'admin/preview'
       include Admin::PreviewHelper
     }
