@@ -13,7 +13,7 @@ Import/Export - http://github.com/radiant/radiant-import-export-extension
 Forms Extension - http://github.com/squaretalent/radiant-forms-extension
 Forms Mailer Extension - http://github.com/squaretalent/radiant-forms_mail-extension 
 
-The default rake action will run the following:
+The install rake action will run the following:
 
 rake production db:bootstrap
 
@@ -25,3 +25,9 @@ rake radiant:extensions:privileges:update
 rake radiant:extensions:paperclipped:update
 
 rake production db:export
+
+So to get started, at the command line, just enter:
+
+"rake install"
+
+HAPPY CODING!
