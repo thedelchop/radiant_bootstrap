@@ -18,7 +18,6 @@ This project takes advantage of the following extensions:
 + [Wym Editor Filter](http://github.com/jomz/radiant-wym-editor-filter-extension) - Page editor filter that uses the WYSIWYM style, allowing easier update of content while preventing design changes.
 + [Copy Move](http://github.com/pilu/radiant-copy-move) - Nifty extension that allow you to copy and moves pages around in the tree structue instead of creating duplicates.
 + [Reorder](http://github.com/radiant/radiant-reorder-extension) - Provides an interface within Radiant CMS for the reording of the pages structure for a Radiant site.
-+ [Chronicle](http://github.com/jgarber/radiant-chronicle-extension) - Provides page versioning for pages within the Radiant interface for easier content management.
 + [Settings](http://github.com/Squeegy/radiant-settings) - Provides a "Settings" tab in the Radiant CMS interface for better handling of the Radiant configuration options.
 
 
@@ -37,16 +36,7 @@ which will run the following rake commands:
 
       rake db:migrate:extensions
 
-      rake radiant:extensions:forms:update
-      rake radiant:extensions:sns:update
-      rake radiant:extensions:privileges:update
-      rake radiant:extensions:paperclipped:update
-      rake radiant:extensions:reorder:update
-      rake radiant:extensions:settings:update
-      rake radiant:extensions:chronicle:update
-
-      rake radiant:extensions:copy_move:install
-      rake radiant:extensions:wym_editor_filter:install
+      rake radiant:extensions:update_all
 
       rake db:export
 
